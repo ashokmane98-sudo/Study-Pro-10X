@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>StudyPro 10X</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="header-left">
+      <button id="backHomeBtn" class="back-btn hidden">← Back</button>
+      <div class="brand" id="appBrand">🎓 StudyPro <span>10X</span></div>
+    </div>
+    <div class="streak-badge">🔥 <span id="streakCount">1</span>d</div>
+  </header>
+
+  <main class="container">
+    <!-- COMPACT MOBILE BENTO HOME SCREEN -->
+    <section id="homeScreen" class="screen active">
+      <div class="hero-card">
+        <div>
+          <span class="pill-tag">SSC CLASS 10 HUB</span>
+          <h2>Ready to ace today?</h2>
+        </div>
+        <div class="hero-emoji">🚀</div>
+      </div>
+
+      <!-- Featured Full-Width Card -->
+      <button class="bento-featured menu-card" data-target="testScreen">
+        <div class="bento-icon pink-bg">📝</div>
+        <div class="bento-text">
+          <h3>AI Test Paper Maker <span class="badge-new">AI</span></h3>
+          <p>Instant practice papers & answer keys</p>
+        </div>
+        <span class="chevron">›</span>
+      </button>
+
+      <!-- 2x2 Compact Mobile Grid -->
+      <div class="bento-grid">
+        <button class="bento-tile menu-card" data-target="syllabusScreen" style="grid-column: span 2;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div class="bento-icon teal-bg">📚</div>
+            <div>
+              <h4>SSC Class 10 Syllabus</h4>
+              <span id="homeSyllabusStat">0% Completed • All Subjects</span>
+            </div>
+          </div>
+        </button>
+            </div>
+        <button class="bento-tile menu-card" data-target="timerScreen">
+          <div class="bento-icon blue-bg">⏱</div>
+          <h4>Focus Timer</h4>
+          <span>25m & 45m</span>
+        </button>
+
+        <button class="bento-tile menu-card" data-target="cardsScreen">
+          <div class="bento-icon purple-bg">🧠</div>
+          <h4>Flashcards</h4>
+          <span>Quick Formulas</span>
+        </button>
+
+        <button class="bento-tile menu-card" data-target="calcScreen">
+          <div class="bento-icon green-bg">📊</div>
+          <h4>Best-of-5 %</h4>
+          <span>Score Predictor</span>
+        </button>
+
+        <button class="bento-tile menu-card" data-target="todoScreen">
+          <div class="bento-icon orange-bg">✅</div>
+          <h4>Study Goals</h4>
+          <span>Daily Targets</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- SCREEN 1: AI TEST PAPER MAKER -->
+    <section id="testScreen" class="screen">
+      <div class="card">
+        <h3>📝 Smart Test Paper Maker</h3>
+        <select id="paperSubject">
+          <option value="Science">Science & Technology</option>
+          <option value="Maths">Mathematics (Alg & Geo)</option>
+          <option value="Social">Social Sciences</option>
+        </select>
+        <input type="text" id="paperTopic" placeholder="Chapter name (e.g., Carbon Compounds)" />
+        <select id="paperDifficulty">
+          <select id="paperMarks">
+          <option value="20">20 Marks (Unit Test • 1 Hr)</option>
+          <option value="40">40 Marks (Semester • 2 Hrs)</option>
+          <option value="80" selected>80 Marks (Full SSC Board Pattern • 3 Hrs)</option>
+        </select>
+          <option value="Easy">Easy</option>
+          <option value="Board" selected>SSC Board Level</option>
+          <option value="Hard">Hard (HOTS)</option>
+        </select>
+        <button id="generatePaperBtn" class="primary-btn full-btn">⚡ Generate Paper</button>
+      </div>
+
+      <div id="paperOutputCard" class="card hidden">
+        <div class="paper-header">
+          <div>
+            <h4 id="paperTitle">Practice Paper</h4>
+            <small id="paperMeta" class="subtext">15 Marks | 30 Mins</small>
+          </div>
+          <button id="printPaperBtn" class="secondary-btn">🖨 PDF</button>
+        </div>
+        <div id="paperContent" class="paper-body"></div>
+        <button id="toggleAnswersBtn" class="secondary-btn full-btn">👁 Show Answer Key</button>
+        <div id="answerKeyBox" class="result-box hidden"></div>
+      </div>
+    </section>
+
+    <!-- SCREEN 2: POMODORO FOCUS TIMER -->
+    <section id="timerScreen" class="screen">
+      <div class="card center-card">
+        <span class="mode-pill" id="timerMode">Study Session</span>
+        <div class="timer-circle">
+          <h1 id="timerDisplay">25:00</h1>
+        </div>
+        <div class="btn-row">
+          <button id="startTimerBtn" class="primary-btn">▶ Start</button>
+          <button id="resetTimerBtn" class="secondary-btn">↺ Reset</button>
+        </div>
+        <div class="preset-row">
+          <button class="chip active" data-mins="25">25m</button>
+          <button class="chip" data-mins="45">45m</button>
+          <button class="chip" data-mins="5">5m Break</button>
+        </div>
+        <p class="stat-note">Sessions Today: <strong id="sessionCount">0</strong></p>
+      </div>
+    </section>
+
+    <!-- SCREEN 3: REVISION FLASHCARDS -->
+    <section id="cardsScreen" class="screen">
+      <div class="card">
+        <div class="card-header">
+          <h3>Formula Cards</h3>
+          <span id="cardCounter">1 / 5</span>
+        </div>
+        <div class="flashcard" id="flashcard">
+          <div class="flashcard-inner" id="flashcardInner">
+            <div class="flashcard-front">
+              <span class="subject-tag" id="cardSubject">Science</span>
+              <p id="cardQuestion">Tap to view</p>
+              <small>Tap to flip ↻</small>
+            </div>
+            <div class="flashcard-back">
+              <p id="cardAnswer">Answer</p>
+            </div>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button id="prevCardBtn" class="secondary-btn">← Prev</button>
+          <button id="nextCardBtn" class="primary-btn">Next →</button>
+        </div>
+      </div>
+      <div class="card">
+        <h4>➕ Add New Card</h4>
+        <input type="text" id="newSubject" placeholder="Subject" />
+        <input type="text" id="newQuestion" placeholder="Question" />
+        <input type="text" id="newAnswer" placeholder="Answer" />
+        <button id="addCardBtn" class="primary-btn full-btn">Save Card</button>
+      </div>
+    </section>
+
+    <!-- SCREEN 4: SSC BEST-OF-5 CALCULATOR -->
+    <section id="calcScreen" class="screen">
+      <div class="card">
+        <h3>SSC Best-of-5 Calculator</h3>
+        <div class="marks-grid">
+          <input type="number" class="mark-input" placeholder="English" min="0" max="100" />
+          <input type="number" class="mark-input" placeholder="Marathi" min="0" max="100" />
+          <input type="number" class="mark-input" placeholder="Hindi/Sanskrit" min="0" max="100" />
+          <input type="number" class="mark-input" placeholder="Maths" min="0" max="100" />
+          <input type="number" class="mark-input" placeholder="Science" min="0" max="100" />
+          <input type="number" class="mark-input" placeholder="Social Sci" min="0" max="100" />
+        </div>
+        <button id="calcPercentBtn" class="primary-btn full-btn">Calculate %</button>
+        <div id="percentResult" class="result-box hidden"></div>
+      </div>
+    </section>
+
+    <!-- SCREEN 5: STUDY TASKS -->
+    <section id="todoScreen" class="screen">
+      <div class="card">
+        <h3>Daily Study Goals</h3>
+        <div class="todo-input-row">
+          <input type="text" id="todoInput" placeholder="Add target..." />
+          <button id="addTodoBtn" class="primary-btn">Add</button>
+        </div>
+        <ul id="todoList" class="todo-list"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bottom-bar">
+    <button id="shareAppBtn" class="share-btn">📲 Share App on WhatsApp</button>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<!-- SCREEN 6: MAHARASHTRA SSC SYLLABUS TRACKER -->
+    <section id="syllabusScreen" class="screen">
+      <div class="card">
+        <div class="card-header">
+          <h3>📚 SSC 10th Syllabus</h3>
+          <span id="syllabusPercentBadge" class="pill-tag">0% Done</span>
+        </div>
+        <div class="progress-track">
+          <div id="syllabusProgressBar" class="progress-fill"></div>
+        </div>
+        <select id="syllabusSubjectSelect">
+          <option value="Maths1">Mathematics Part 1 (Algebra)</option>
+          <option value="Maths2">Mathematics Part 2 (Geometry)</option>
+          <option value="Science1">Science & Tech Part 1</option>
+          <option value="Science2">Science & Tech Part 2</option>
+          <option value="History">History & Political Science</option>
+          <option value="Geography">Geography</option>
+          <option value="English">English (Kumarbharati)</option>
+          <option value="Marathi">Marathi (Aksharbharati)</option>
+          <option value="Hindi">Hindi (Lokbharati)</option>
+        </select>
+        <ul id="chapterChecklist" class="todo-list"></ul>
+      </div>
+    </section>
