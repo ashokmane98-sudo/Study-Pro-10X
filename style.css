@@ -311,7 +311,6 @@ input, select {
 .todo-list li.done span { text-decoration: line-through; color: #6e7691; }
 
 .bottom-bar { padding: 10px 14px; background: #10131e; border-top: 1px solid #1e2336; }
-.share-btn { width: 100%; background: #25d366; color: #091217; border: none; padding: 10px; border-radius: 12px; font-weight: 800; font-size: 0.88rem; cursor: pointer; }
 .teal-bg { background: rgba(20, 184, 166, 0.18); }
 
 .progress-track {

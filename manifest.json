@@ -7,9 +7,9 @@
   "theme_color": "#0b0d14",
   "icons": [
     {
-      "src": "https://flaticon.com",
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='90' fill='%232563eb'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='220' font-weight='bold' fill='white'%3E10X%3C/text%3E%3C/svg%3E",
       "sizes": "512x512",
-      "type": "launchericon-512x512.png"
+      "type": "image/svg+xml"
     }
   ]
 }

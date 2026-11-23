@@ -351,11 +351,3 @@ document.getElementById("addTodoBtn").addEventListener("click", () => {
 });
 
 renderTodos();
-
-// --- SHARE BUTTON ---
-document.getElementById("shareAppBtn").addEventListener("click", () => {
-  const msg = encodeURIComponent(
-    "Hey! Check out StudyPro 10X — an AI Test Paper Maker, focus timer, and SSC Best-of-5 calculator app I built!"
-  );
-  window.open(`https://wa.me{msg}`, "_blank");
-});
