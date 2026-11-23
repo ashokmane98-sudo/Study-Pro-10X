@@ -1,24 +1,8 @@
 {
   "name": "StudyPro 10X",
-  "short_name": "StudyPro 10X",
-  "description": "SSC Class 10 Study Hub with AI Test Paper Maker, Syllabus Tracker, Flashcards, and Focus Timer.",
-  "start_url": "/Study-Pro-10X/",
-  "scope": "/Study-Pro-10X/",
+  "short_name": "StudyPro",
+  "start_url": "/",
   "display": "standalone",
-  "background_color": "#0b0f19",
-  "theme_color": "#0b0f19",
-  "icons": [
-    {
-      "src": "icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    }
-  ]
+  "background_color": "#0F131A",
+  "theme_color": "#0F131A"
 }
