@@ -198,6 +198,13 @@
   <script src="script.js"></script>
 </body>
 </html>
+<script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/Study-Pro-10X/sw.js');
+    }
+  </script>
+</body>
+</html>
 <!-- SCREEN 6: MAHARASHTRA SSC SYLLABUS TRACKER -->
     <section id="syllabusScreen" class="screen">
       <div class="card">
@@ -221,4 +228,5 @@
         </select>
         <ul id="chapterChecklist" class="todo-list"></ul>
       </div>
+
     </section>
