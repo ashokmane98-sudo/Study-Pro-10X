@@ -1,8 +1,21 @@
 {
   "name": "StudyPro 10X",
   "short_name": "StudyPro",
-  "start_url": "/",
+  "start_url": "/Study-Pro-10X/",
+  "scope": "/Study-Pro-10X/",
   "display": "standalone",
   "background_color": "#0F131A",
-  "theme_color": "#0F131A"
+  "theme_color": "#0F131A",
+  "icons": [
+    {
+      "src": "/Study-Pro-10X/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/Study-Pro-10X/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
